@@ -26,3 +26,9 @@ exports.all = async (req, res, next) => {
     res.status(200).json(data);
 
 }
+
+exports.delete = async (req, res, next) => {
+    let data = await products.findOneAndDelete({ _id: req.params.id });
+
+    res.status(200).json(data);
+}
